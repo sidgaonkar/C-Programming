@@ -21,10 +21,6 @@ int main()
     data1=160;
     data2=40;
     data3 = data1+data2;
-    
     printf("Total Distance form A2C is: %d",data3);
     return 0;
-    
-
-    
 }
