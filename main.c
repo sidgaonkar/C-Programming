@@ -26,7 +26,15 @@ myscore=25    // variable initiialization
 when the variable is created inside a function it is called local variable
 when the variable is vreated outside a function it is called Global Variable
  */
+
+ /*----------Storage Classes-----------------
+ -static:-- static makes the variable accessible only in the class, it cuts acess to outside world
+ Extern:-- is used to accss the global variable whici is defined outside the scope of file
+ 
+ 
+ */
 #include <stdio.h>
+#include "math.h"
 
 int main()
 {
@@ -43,6 +51,10 @@ int main()
     printf("Total Distance form A2C is: %d \n",data3);
     printf("-------Printing the Address of the variable----------");
     printf("address of data1:%p data2:%p data3:%p",&data1,&data2,&data3);
+    printf("The Addition is: %d \n",Addition(5,2));
+    printf("The Multiply is: %d \n",Multiply(5,2));
+    printf("The Subtract is: %d \n",Subtract(5,2));
+    printf("The Divide is: %d \n",Divide(5,2));
 
 
     return 0;
