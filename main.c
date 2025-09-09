@@ -34,7 +34,25 @@ when the variable is vreated outside a function it is called Global Variable
  
  */
 #include <stdio.h>
+#include<stdint.h>
 #include "math.h"
+struct carModel
+{
+    unsigned int carNumber;
+    unsigned int carPrice;
+    unsigned int carMaxSpeed;
+    float carWeight;
+};
+
+struct DataSet
+{
+    char data1;
+    char data2;
+    int data3;
+    short data4;
+
+};
+
 
 int main()
 {
@@ -95,12 +113,63 @@ int main()
     return 0;
     */
 
+
+    //Working with Structure
+
+    struct carModel carBMW = {2021,15000,220,1330};
+    struct carModel carFORD = {2021,15000,220,1330};
+    struct carModel carHonda = {.carWeight=15000,.carMaxSpeed=220,.carNumber=2021,.carPrice=1234321};
+
+    /*
+    changing values of member element
+    // carBMW.carMaxSpeed=430;
+
+    // printf("Details of the Car BMW is as follows\n");
+    // printf("CarNumber = %u\n",carBMW.carNumber);
+    // printf("CarWeight = %u\n",carBMW.carWeight);
+    // printf("CarMaxSpeed = %u\n",carBMW.carMaxSpeed);
+    // printf("CarPrice = %u\n",carBMW.carPrice);
+    // printf("The Size of structure carBMW is %d:",sizeof(carBMW));
+    */
+
+
+    struct DataSet Data;
+
+    Data.data1 = 0x11;
+    Data.data2 = 0x22;
+    Data.data3 = 0x11223344;
+    Data.data4 = 0x1122;
+
+    uint8_t *ptr;
+    ptr = (uint8_t*)&Data;
+    uint32_t totalSize = sizeof(struct DataSet);
     
 
 
+    printf("Memory Adreess         Content\n");
+    printf("==============================\n");
+
+    for (int i = 0; i < totalSize; i++)
+    {
+        printf("%p    :     %x \n",ptr,*ptr);
+        ptr++;
+    }
+
+    printf("The Size of structure is %d",totalSize);
+    getchar();
+    
 
 
     
+
+    
+
+    
+
+
+    
+
+    return 0;
 
 
 }
