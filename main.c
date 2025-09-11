@@ -140,6 +140,11 @@ int main()
     Data.data3 = 0x11223344;
     Data.data4 = 0x1122;
 
+    //structure pointer
+    struct DataSet *pData;
+    pData = &Data;
+    pData ->data1 = 0x55;
+    
     uint8_t *ptr;
     ptr = (uint8_t*)&Data;
     uint32_t totalSize = sizeof(struct DataSet);
@@ -157,19 +162,19 @@ int main()
 
     printf("The Size of structure is %d",totalSize);
     getchar();
-    
-
-
-    
-
-    
-
-    
-
-
-    
-
     return 0;
+
+
+    //Creating own datatype using typedef
+    //typedef structure
+    typedef struct{
+        int carNumber;
+        int carPrice;
+        int carMaxSpeed;
+        float carWeight;
+    } CarModel_t;
+
+    CarModel_t carAudi = {2021,15000,220,1330};
 
 
 }
