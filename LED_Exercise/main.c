@@ -15,7 +15,12 @@ int main(void) {
     *ptrPortDModeReg |= 0x01000000;
     //set 12th bit position to 1
     *ptrPortDOutReg |= 0x00001000;
-    
+
+    //modifying using shift operator
+    *ptrCLKctrlreg |=(1<<3);
+    *ptrPortDModeReg &=~(3<<24);
+    *ptrPortDModeReg |=(1<<24);
+    *ptrPortDOutReg |=(1<<12);
 
 
 
